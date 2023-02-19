@@ -1,12 +1,22 @@
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer";
-import NavBar from "./components/NavBar"
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import NavBar from "./components/NavBar";
+import Error404 from "./components/Error404";
 
 function App() {
   return (
+    <BrowserRouter>
     <div>
       <NavBar />
-      <ItemListContainer mensaje="Bienvenido a Robinet"/>
+      <Routes>
+        <Route path={"/"} element={<ItemListContainer/>}/>
+        <Route path={"/category/:index"} element={<ItemListContainer/>}/>
+        <Route path={"/item/:index"} element={<ItemDetailContainer/>}/>
+        <Route path={"*"} element={<Error404/>}/>
+      </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 

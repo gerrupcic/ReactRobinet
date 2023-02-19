@@ -1,0 +1,6 @@
+[
+    {"index":1, "nombre": "Berna Lavatorio S/M", "imagen":"https://www.robinet.com.ar/img/familia/96_lavatorio-berna-z.jpg", "precio":"5000", "stock":10, "descripcion": "Griferia Alta Calidad", "categoria":"griferias"},
+    {"index":2, "nombre": "Baires Bañera", "imagen":"https://www.robinet.com.ar/img/galeria_productos/410_Ba%C3%B1era%20baires.jpg", "precio":"7000", "stock":10,"descripcion": "Griferia Alta Calidad", "categoria":"griferias"},
+    {"index":3, "nombre": "Tango Percha Simple", "imagen":"https://www.robinet.com.ar/img/familia/156_percha-simple-tango-web.jpg", "precio":"1000", "stock":20, "descripcion": "Griferia Alta Calidad", "categoria":"accesorios"},
+    {"index":4, "nombre": "Belfast Toallero Aro Grande", "imagen":"https://www.robinet.com.ar/img/galeria_productos/428_toallero%20aro%20belfast.jpg", "precio":"1000", "stock":20, "descripcion": "Griferia Alta Calidad", "categoria":"accesorios"}
+]
