@@ -2,25 +2,23 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
-import arrayProductos from "./json/productos.json"
+import {getDocs, collection, getFirestore, query, where} from "firebase/firestore";
 
 
 const ItemListContainer = () => {
     const [items, setItems] = useState([]);
-    const{index} = useParams();
+    const{id} = useParams();
 
     useEffect(() => {
-        const promesa = new Promise ((resolve) => {
-            setTimeout (() => {
-                resolve(index ? arrayProductos.filter(item => item.categoria === index) : arrayProductos);
-            }, 2000);
-
+        const db = getFirestore();
+        const itemsCollection = collection(db, "items");
+        const filter = id ? query(itemsCollection, where("categoria", "==", id)) : itemsCollection;
+        getDocs(filter).then(elements => {
+            setItems(elements.docs.map(element => ({id:element.id, ...element.data()})));
         });
-        promesa.then((respuesta) => {
-            setItems(respuesta);
-        });
+    }, [id]);
 
-    }, [index]);
+
 
     return(
         <div className="container my-5">
